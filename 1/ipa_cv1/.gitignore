@@ -1,0 +1,7 @@
+/.vs/
+/Debug/*
+!/Debug/freeglut.dll
+/IPA_DLL/Debug/
+/moveable_ball/Debug/
+/Win32APICall/.vs/
+/Win32APICall/Debug/
