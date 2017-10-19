@@ -1,0 +1,67 @@
+; Login studenta: xharmi00
+
+[BITS 64]
+
+
+GLOBAL _DllMainCRTStartup
+EXPORT _DllMainCRTStartup
+
+GLOBAL ipa_algorithm
+EXPORT ipa_algorithm
+
+
+SECTION .bss
+
+	TMP RESB 8
+
+
+SECTION .data
+
+	NUMBERS TIMES 400 DB 2
+
+
+SECTION .text
+
+_DllMainCRTStartup:
+	PUSH RBP
+	MOV RBP, RSP
+
+	MOV RAX, 1
+	MOV RSP, RBP
+	POP RBP
+	RET
+
+ipa_algorithm:
+	PUSH RBX
+	PUSH RCX
+	PUSH RDX
+
+	MOV RBX, NUMBERS
+	PXOR MM0, MM0
+
+	MOV RCX, 400
+.for:
+	PADDSB MM0, QWORD [RBX]
+	ADD RBX, QWORD 8
+
+	SUB RCX, QWORD 8
+	CMP RCX, QWORD 0
+	JG .for
+
+	XOR RAX, RAX
+	MOVQ [REL TMP], MM0
+	MOV RBX, TMP
+
+	MOV RCX, QWORD 8
+.for_add:
+	MOVSX RDX, BYTE [RBX]
+	ADD RAX, RDX
+	ADD RBX, QWORD 1
+
+	LOOP .for_add
+
+	POP RDX
+	POP RCX
+	POP RBX
+
+	RET 0
