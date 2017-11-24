@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (C_solution.vcxproj, Win32Project2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  moveable_ball.cpp
+  stdafx.cpp
+  Generating Code...
+  moveable_ball.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\1\ipa_cv1\Debug\Moveable_ball.exe
+  moveable_ball.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\1\ipa_cv1\Debug\Moveable_ball.pdb (Partial PDB)

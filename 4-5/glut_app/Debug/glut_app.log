@@ -1,0 +1,7 @@
+﻿  Assembling [Inputs]...
+  stdafx.cpp
+  glut_app.cpp
+  Generating Code...
+     Creating library C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\4-5\Debug\glut_app.lib and object C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\4-5\Debug\glut_app.exp
+  glut_app.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\4-5\Debug\glut_app.exe
+  glut_app.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\4-5\Debug\glut_app.pdb (Partial PDB)

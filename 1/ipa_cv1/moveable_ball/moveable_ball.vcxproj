@@ -157,11 +157,6 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="moveable_ball.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IPA_DLL\IPA2.vcxproj">
-      <Project>{f57f88e9-1860-493e-89e4-f457b98fdf7f}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

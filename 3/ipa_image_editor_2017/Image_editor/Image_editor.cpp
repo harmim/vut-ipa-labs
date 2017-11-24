@@ -1,9 +1,7 @@
-/*Sablona pro projekty do predmetu IPA, tema graficky editor
+/*Lab3-solution
 *Autor: Tomas Goldmann, igoldmann@fit.vutbr.cz
-*
-*LOGIN STUDENTA: xharmi00
+*LOGIN STUDENTA:igoldmann
 */
-
 
 #include <opencv2/core/core.hpp>
 
@@ -16,9 +14,9 @@
 #include "ipa_tool.h"
 
 #define WIN_WIDTH 800.0f
-#define PROJECT_NAME "IPA - graficky editor 2017"
-#define PROJECT_NAME_WIN_IN "IPA - graficky editor 2017-IN"
-#define PROJECT_NAME_WIN_OUT "IPA - graficky editor 2017-OUT"
+#define PROJECT_NAME "IPA - lab 3"
+#define PROJECT_NAME_WIN_IN "IPA - lab 3-IN"
+#define PROJECT_NAME_WIN_OUT "IPA - lab 3-OUT"
 
 using namespace cv;
 using namespace std;
@@ -33,18 +31,18 @@ int main(int argc, char** argv)
 	Mat output, window_img,image;
 	image = imread(argv[1], CV_LOAD_IMAGE_COLOR);
 
-	if (!image.data)
+	if (!image.data)    
 	{
 		cout << "Could not open or find the image" << std::endl;
 		return -1;
 	}
 	//koeficient pro prijatelne vykresleni
 	float q = WIN_WIDTH / image.cols;
-
-	//vytvoreni vystupniho obrazu
+	
+	//vytvoreni vystupniho obrazu	
 	image.copyTo(output);
 
-	cv::resize(image, window_img, cv::Size(q*image.cols, q*image.rows));
+	cv::resize(image, window_img, cv::Size(q*(float)image.cols, q*(float)image.rows));
 
 	namedWindow(PROJECT_NAME_WIN_IN, WINDOW_AUTOSIZE);
 	imshow(PROJECT_NAME_WIN_IN, window_img);
@@ -62,22 +60,23 @@ int main(int argc, char** argv)
 		InstructionCounter counter;
 		Ipa_algorithm f;
 		f = (Ipa_algorithm)GetProcAddress(hInstLibrary, "ipa_algorithm");
+		
 		if (f)
 		{
 			counter.start();
-			int x = f(image.data, output.data,image.cols, image.rows, argc, argv);
+			int count=f(image.data, output.data,image.cols, image.rows, argc, argv);
+			cout << count << endl;
 			counter.print();
 		}
-
 	}
 
 
 	namedWindow(PROJECT_NAME_WIN_OUT, WINDOW_AUTOSIZE);
-
-	cv::resize(output, output, cv::Size(q*image.cols, q*image.rows));
+	
+	cv::resize(output, output, cv::Size(q*(float)image.cols, q*(float)image.rows));
 	imshow(PROJECT_NAME_WIN_OUT, output);
-
-	waitKey(0);
+	
+	waitKey(0); 
 	FreeLibrary(hInstLibrary);
 	return 0;
 }

@@ -1,0 +1,8 @@
+﻿  Assembling [Inputs]...
+  bouncing_balls.cpp
+bouncing_balls.cpp(101): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  stdafx.cpp
+  Generating Code...
+     Creating library C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\6\x64\Release\IPA cv6-AVX.lib and object C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\6\x64\Release\IPA cv6-AVX.exp
+  glut_app.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\6\x64\Release\IPA cv6-AVX.exe
+  glut_app.vcxproj -> C:\Users\harmi\Disk Google\VUT\BIT\IPA\Cvičení\6\x64\Release\IPA cv6-AVX.pdb (Full PDB)
